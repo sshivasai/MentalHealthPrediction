@@ -1,0 +1,147 @@
+ {% include 'includes/navbar.html' %}
+
+ {% block body %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mental Health Prediction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/homeassets/img/Symbol.png" rel="icon">
+  <link href="static/homeassets/img/Symbol.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/homeassets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/homeassets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/homeassets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/homeassets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/homeassets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/homeassets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/homeassets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/homeassets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>Better Solutions For Your Mental Health</h1>
+          <h2>We are team of developers making a project on Mental Health Prediction with Machine Learning</h2>
+          <div class="d-flex justify-content-center justify-content-lg-start">
+            {% if session.get('username') %}
+            <a href="/dashboard" class="btn-get-started scrollto">Go to Dashboard</a>
+            {% else %}
+            <a href="/register" class="btn-get-started scrollto">Get Started</a>
+            {% endif %}
+             </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="static/homeassets/img/image.png" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= Technology Section ======= -->
+    <section id="clients" class="clients section-bg">
+      <div class="container">
+
+        <div class="row" data-aos="zoom-in">
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="static/homeassets/img/Technolgies/Technology-1.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="static/homeassets/img/Technolgies/Technology-2.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="static/homeassets/img/Technolgies/Technology-3.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="static/homeassets/img/Technolgies/Technology-4.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="static/homeassets/img/Technolgies/Technology-5.png" class="img-fluid" alt="">
+          </div>
+
+          <div class="col-lg-2 col-md-4 col-6 d-flex align-items-center justify-content-center">
+            <img src="static/homeassets/img/Technolgies/Technology-6.png" class="img-fluid" alt="">
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Technology Section -->
+
+    <!-- ======= About Us Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About Us</h2>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-6">
+            <p>
+              The rise in mental health disorders and the necessity for better medical health treatment have prompted an inquiry into machine learning applications in mental health. A systematic assessment of machine learning approaches to predicting mental health issues is examined in this study. Human mental health is affected by a variety of factors, some of which may include a person's age (depression affects a specific age gap or group), a person's gender (most mental issues affect certain genders more, if not all genders equally), and to some extent, one's family history (depending on one's own upbringing, some people tend to be violent due to childhood trauma).
+Age, gender, and family history are typically important factors in such diseases. Due to these issues, as well as the subjective nature of age, gender, and family history evaluations, determining whether someone is likely to be mentally sick (having mental issues or problems) or not by simply looking at them becomes extremely difficult, and it is for this reason that certain techniques are used. Various digital methodologies that have been created to demonstrate the possibility of providing precise or goal-oriented evaluations in an efficient manner. In this study, we employ notions involving the employment of a support vector machine (SVM). These are clinical assessment applications that make use of computational learning methods.
+            </p>
+            
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0">
+            <p>
+              The primary goal of SVM is to analyze textual data. It also assesses the algorithm's precision. To support the management of patients with mental problems, the approach for analyzing crucial mental parameters has been well-developed. A classifier has been built to anticipate crucial parameters and make diagnostic decisions by combining the results of age, gender, and family history assessments to provide a final analysis on the mental health issue at hand.
+Furthermore, we use measures such as accuracy, precision, and recall to analyze the Support vector machine classifier's capacity to predict mental health assessment. As a result, using a mental health predictive model to screen and track mentally ill patients opens up possibilities for evaluation. This contemporary movement aims to improve digital and mobile health technologies.
+
+            </p>
+            
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    
+  <!-- Vendor JS Files -->
+  <script src="static/homeassets/vendor/aos/aos.js"></script>
+  <script src="static/homeassets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/homeassets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/homeassets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/homeassets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/homeassets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/homeassets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/homeassets/js/main.js"></script>
+
+</body>
+
+</html>
+
+{% endblock %}

@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Prediction Page</title>
+  <!-- Favicon icon -->
+  <link rel="icon" type="static/Symbol.ico" sizes="16x16" href="../../assets/images/favicon.png">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
+  <link href="static/LoginReg/css/style.css" rel="stylesheet">
+    
+</head>
+
+<body class="h-100">
+    
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+
+
+
+    <div class="login-form-bg h-100">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100">
+                <div class="col-xl-6">
+                    <div class="form-input-content">
+                        <div class="card login-form mb-0">
+                            <div class="card-body pt-5">
+                                
+                                    
+        
+                                    <h4>Please Enter the Details Below</h4>
+
+                                    {% include 'includes/_messages.html' %}
+                                    {% from "includes/_formhelpers.html" import render_field %}
+                                    <form method="POST" action="" class="mt-5 mb-5 login-input">
+                                      <div class="form-group">
+                                        <div class="form-row">
+                                          <div class="col-md-6">
+                                            <div class="form-label-group">
+                                              <label><b>Full Name  </b> </label>  
+                                              <input type="text" id="inputUsername" name="name" class="form-control" placeholder="Name" required="required" autofocus="autofocus" value={{request.form.name}} {{name}} >
+                                      
+                                            </div>
+                                          </div>
+                                          
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="form-row">
+                                          <div class="col-md-6">
+                                            <div class="form-label-group">
+                                              <label><b>Age  </b> </label>
+                                              <input type="number" id="inputUsername" name="age" class="form-control" placeholder="Age" required="required" autofocus="autofocus" value={{request.form.age}} {{age}} >
+                                      
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-label-group">
+                                                <label for={{request.form.gender}}> <b>Gender </b>
+                                                    <br>
+                                                    &nbsp
+                                                    <br>
+                                                    
+                                                    
+                                                    <select name="gender" id="inputUsername" style = "width: 120px;
+                                                    height: 30px;
+                                                    border: 1px solid #999;
+                                                    font-size: 18px;
+                                                    color: #1c87c9;
+                                                    background-color: #eee;
+                                                    border-radius: 5px;
+                                                    box-shadow: 4px 4px #ccc;">
+                                                      <option value="Male">Male</option>
+                                                      <option value="Female">Female</option>
+                                                      <option value="Other">Other</option>
+                                                    </select>
+                                                  </label>
+                                    
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                
+                                      <div class="form-group">
+                                        <div class="form-label-group">
+                                          <label for={{request.form.family_history}} ><b> Family History :   </b> </label>
+                                    
+                                            <select name="family_history" id="inputUsername" style = "width: 120px;
+                                            height: 30px;
+                                            border: 1px solid #999;
+                                            font-size: 18px;
+                                            color: #1c87c9;
+                                            background-color: #eee;
+                                            border-radius: 5px;
+                                            box-shadow: 4px 4px #ccc;">
+                                              <option value= 0 >No</option>
+                                              <option value= 1 >Yes</option>
+                                  
+                                            </select>
+                                          </label>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="form-label-group">
+                                          <label for={{request.form.benefits}} ><b> Benefits :   </b> </label>
+                                    
+                                          <select name="benefits" id="inputUsername" style = "width: 120px;
+                                          height: 30px;
+                                          border: 1px solid #999;
+                                          font-size: 18px;
+                                          color: #1c87c9;
+                                          background-color: #eee;
+                                          border-radius: 5px;
+                                          box-shadow: 4px 4px #ccc;">
+                                            <option value= 0 > Don't Know</option>
+                                            <option value= 1 > No</option>
+                                            <option value= 2 >Yes</option>
+                                
+                                          </select>
+                                        </label>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="form-label-group">
+                                          <label for={{request.form.care_options}} ><b> Care Options :   </b> </label>
+                                    
+                                          <select name="care_options" id="inputUsername" style = "width: 120px;
+                                          height: 30px;
+                                          border: 1px solid #999;
+                                          font-size: 18px;
+                                          color: #1c87c9;
+                                          background-color: #eee;
+                                          border-radius: 5px;
+                                          box-shadow: 4px 4px #ccc;">
+                                            <option value= 0 > No</option>
+                                            <option value= 1 > Not Sure</option>
+                                            <option value= 2 >Yes</option>
+                                
+                                          </select>
+                                        </label>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="form-label-group">
+                                          <label for={{request.form.anonymity}} ><b> Anoymity :   </b> </label>
+                                    
+                                          <select name="anonymity" id="inputUsername" style = "width: 120px;
+                                          height: 30px;
+                                          border: 1px solid #999;
+                                          font-size: 18px;
+                                          color: #1c87c9;
+                                          background-color: #eee;
+                                          border-radius: 5px;
+                                          box-shadow: 4px 4px #ccc;">
+                                            <option value= 0 > Don't Know</option>
+                                            <option value= 1 > No</option>
+                                            <option value= 2 >Yes</option>
+                                
+                                          </select>
+                                        </label>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="form-label-group">
+                                          <label for={{request.form.leave}} ><b> Leave :   </b> </label>
+                                           <select name="leave" id="inputUsername" style = "width: 120px;
+                                          height: 30px;
+                                          border: 1px solid #999;
+                                          font-size: 18px;
+                                          color: #1c87c9;
+                                          background-color: #eee;
+                                          border-radius: 5px;
+                                          box-shadow: 4px 4px #ccc;">
+                                            <option value= 0 > Don't Know</option>
+                                            <option value= 1 > Somewhat Difficult</option>
+                                            <option value= 2 >Somewhat Easy</option>
+                                            <option value= 3 >Very Difficult</option>
+                                            <option value= 4 >Very Easy</option>
+                                          </select>
+                                        </label>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="form-label-group">
+                                          <label for={{request.form.work_interfere}} ><b> Work Interference :   </b> </label>
+                                           <select name="work_interfere" id="inputUsername" style = "width: 120px;
+                                          height: 30px;
+                                          border: 1px solid #999;
+                                          font-size: 18px;
+                                          color: #1c87c9;
+                                          background-color: #eee;
+                                          border-radius: 5px;
+                                          box-shadow: 4px 4px #ccc;">
+                                            <option value= 0 > Don't Know</option>
+                                            <option value= 1 > Never</option>
+                                            <option value= 2 >Often </option>
+                                            <option value= 3 >Rarely </option>
+                                            <option value= 4 >Sometimes</option>
+                                          </select>
+                                        </label>
+                                        </div>
+                                      </div>
+                                      
+                                      
+                                      
+                                          <div class="form-group">
+                                            <div class="form-label-group">
+                                              <br>
+                                              &nbsp
+                                              <label><b>Current Status :   </b>  {{ current_status }} </label>
+                                              
+                                            </div>
+                                            <div class="form-group">
+                                              <div class="form-label-group">
+                                                <br>
+                                                &nbsp
+                                                <label><b>Probility of  getting Issue :   </b>  {{ current_probability }} </label>
+                                                
+                                              </div>
+                                          
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <button type="submit" class="btn login-form__btn submit w-100">Predict</button>
+                                    </form>
+                                    
+                                    </p>
+                                </div>
+                                <br>
+                                <a class="text-center" href="index" style = "align:center"> <h3> Go Back</h3></a>
+                                    
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="static/LoginReg/plugins/common/common.min.js"></script>
+    <script src="static/LoginReg/js/custom.min.js"></script>
+    <script src="static/LoginReg/js/settings.js"></script>
+    <script src="static/LoginReg/js/gleek.js"></script>
+    <script src="static/LoginReg/js/styleSwitcher.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+

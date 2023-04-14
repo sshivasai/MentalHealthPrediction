@@ -1,0 +1,169 @@
+
+{% include 'includes/navbar.html' %}
+{% include 'includes/pyscripts.html' %}
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Mental Health Prediction</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/homeassets/img/Symbol.png" rel="icon">
+  <link href="static/homeassets/img/Symbol.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Jost:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/homeassets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/homeassets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/homeassets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/homeassets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="static/homeassets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/homeassets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="static/homeassets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/homeassets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex align-items-center">
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up" data-aos-delay="200">
+          <h1>Welcome, 
+            <py-script>
+              profile = "{{ profile }}"
+              profile = profile[1:-1]
+              profile = profile.split(",")
+              print(profile[0][1:-1])
+            </py-script>
+            </h1>
+          <h2>Your Current Status is : {% if status %}
+            {{status}}
+            {% else %}
+            Unavailable
+          </h2>
+    
+             {% endif %}
+
+             {% if status %}
+             
+               <div class="d-flex justify-content-center justify-content-lg-start">
+                <a href="/predict" class="btn-get-started scrollto"> Predict More</a>
+                 </div>
+            {% else %}
+            
+            <div class="d-flex justify-content-center justify-content-lg-start">
+              <a href="/updateprofile" class="btn-get-started scrollto">Update Profile</a>
+               </div>
+               
+             {% endif %}
+             <div class="d-flex justify-content-center justify-content-lg-start">
+              <a href="#data" class="btn-get-started scrollto">Data </a>
+               </div>
+        </div>
+        <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
+          <img src="static/homeassets/img/image.png" class="img-fluid animated" alt="">
+        </div>
+      </div>
+    </div>
+
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+   
+
+    <!-- ======= Prediction ======= -->
+    <section id="data" class="predict">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Data </h2>
+          <p>
+            Records of all Predictions
+          </p>
+        </div>
+
+        <div class="row content">
+          <div class="col-lg-12">
+            <p>
+              <table class="table table-bordered">
+                <thead>
+                  <tr>
+                    
+                    <th scope="col">Name</th>
+                    <th scope="col">Family History</th>
+                    <th scope="col">Benefits</th>
+                    <th scope="col">Care Options</th>
+                    <th scope="col">Anoymity</th>
+                    <th scope="col">Leave</th>
+                    <th scope="col">Work Interference</th>
+                    <th scope="col">Probility of Yes</th>
+                    <th scope="col">Status </th>
+                    <th scope="col">Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  
+                  {% for data in datatable %}
+                  <tr>
+                  
+                    <th scope="row"> {{ data[0] }}</th>
+                    <td>
+                      {{ data[1]}}
+
+                    </td>
+                    <td>{{ data[2] }}</td>
+                    <td>{{ data[3] }}</td>
+                    <td>{{ data[4] }}</td>
+                    <td>{{ data[5] }}</td>
+                    <td>{{ data[6] }}</td>
+                    <td>{{ data[8] }}</td>
+                    <td>{{ data[9] }}</td>
+                    <td>{{ data[7] }}</td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </p>
+            
+          </div>
+          
+        </div>
+
+      </div>
+    </section><!-- End About Us Section -->
+
+    
+  <!-- Vendor JS Files -->
+  <script src="static/homeassets/vendor/aos/aos.js"></script>
+  <script src="static/homeassets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="static/homeassets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="static/homeassets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="static/homeassets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="static/homeassets/vendor/waypoints/noframework.waypoints.js"></script>
+  <script src="static/homeassets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="static/homeassets/js/main.js"></script>
+
+</body>
+
+</html>
+{% endblock %}

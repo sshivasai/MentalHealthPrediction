@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html class="h-100" lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Register Page</title>
+  <!-- Favicon icon -->
+  <link rel="icon" type="static/Symbol.ico" sizes="16x16" href="../../assets/images/favicon.png">
+  <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous"> -->
+  <link href="static/LoginReg/css/style.css" rel="stylesheet">
+    
+</head>
+
+<body class="h-100">
+    
+    <!--*******************
+        Preloader start
+    ********************-->
+    <div id="preloader">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="3" stroke-miterlimit="10" />
+            </svg>
+        </div>
+    </div>
+    <!--*******************
+        Preloader end
+    ********************-->
+
+    
+
+
+
+    <div class="login-form-bg h-100">
+        <div class="container h-100">
+            <div class="row justify-content-center h-100">
+                <div class="col-xl-6">
+                    <div class="form-input-content">
+                        <div class="card login-form mb-0">
+                            <div class="card-body pt-5">
+                                
+                                    
+        
+                                    <h4>Please Enter the Details Below</h4>
+
+                                    {% include 'includes/_messages.html' %}
+                                    {% from "includes/_formhelpers.html" import render_field %}
+                                    <form method="POST" action="" class="mt-5 mb-5 login-input">
+                                      <div class="form-group">
+                                        <div class="form-row">
+                                          <div class="col-md-6">
+                                            <div class="form-label-group">
+                                              <input type="text" id="inputUsername" name="name" class="form-control" placeholder="Full Name" required="required" autofocus="autofocus" value={{request.form.name}}>
+                                              
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-label-group">
+                                              <input type="text" id="inputUsername" name="username" class="form-control" placeholder="Username" required="required" autofocus="autofocus" value={{request.form.username}}>
+                                              
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="form-row">
+                                          <div class="col-md-6">
+                                            <div class="form-label-group">
+                                              <input type="number" id="inputUsername" name="age" class="form-control" placeholder="Age" required="required" autofocus="autofocus" value={{request.form.age}}>
+                                              
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-label-group">
+                                              <label for={{request.form.gender}}>Gender : 
+                                                <select name="gender" id="inputUsername" style = "width: 120px;
+                                                height: 30px;
+                                                border: 1px solid #999;
+                                                font-size: 18px;
+                                                color: #1c87c9;
+                                                background-color: #eee;
+                                                border-radius: 5px;
+                                                box-shadow: 4px 4px #ccc;">
+                                                  <option value="Male">Male</option>
+                                                  <option value="Female">Female</option>
+                                                  <option value="Other">Other</option>
+                                                </select>
+                                              </label>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="form-label-group">
+                                          <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email" required="required" autofocus="autofocus" value={{request.form.email}}>
+                                          
+                                        </div>
+                                      </div>
+                                      <div class="form-group">
+                                        <div class="form-row">
+                                          <div class="col-md-6">
+                                            <div class="form-label-group">
+                                              <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="required" autofocus="autofocus" value={{request.form.password}}>
+                                              
+                                            </div>
+                                          </div>
+                                          <div class="col-md-6">
+                                            <div class="form-label-group">
+                                              <input type="password" id="confirmPassword" name="confirm" class="form-control" placeholder="Confirm Password" required="required" autofocus="autofocus" value={{request.form.confirm}}>
+                                              
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <button type="submit" class="btn login-form__btn submit w-100">Register</button>
+                                    </form>
+                                    <a class="text-center" href="index"> <h3> Go Home</h3></a>
+                                    <p class="mt-5 login-form__footer">Have account <a href="login" class="text-primary">Sign In </a> now</p>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    
+
+    <!--**********************************
+        Scripts
+    ***********************************-->
+    <script src="static/LoginReg/plugins/common/common.min.js"></script>
+    <script src="static/LoginReg/js/custom.min.js"></script>
+    <script src="static/LoginReg/js/settings.js"></script>
+    <script src="static/LoginReg/js/gleek.js"></script>
+    <script src="static/LoginReg/js/styleSwitcher.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
